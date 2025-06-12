@@ -32,7 +32,7 @@ const getPageTitle = (pathname: string) => {
 
   // Normalize the pathname (remove trailing slashes)
   const normalizedPath = pathname.replace(/\/$/, '');
-  return routes[normalizedPath] || 'AddressBook';
+  return routes[normalizedPath] || (normalizedPath === '' ? 'Dashboard' : 'AddressBook');
 };
 
 const SidebarWithHeader = ({ children }: { children?: React.ReactNode }) => {
@@ -63,7 +63,26 @@ const SidebarWithHeader = ({ children }: { children?: React.ReactNode }) => {
           &copy; {new Date().getFullYear()} MyApp Inc.
         </div>
       </aside>
-      </div>  
+
+      {/* Main content area */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="bg-gray-800 text-white px-4 py-4 shadow-md flex items-center justify-between min-h-[70px]">
+          <h2 className="text-xl font-semibold my-0">{title}</h2>
+          {/* Right-aligned content as shown in image - e.g., icons, user menu */}
+          <div className="flex items-center gap-4">
+            {/* Placeholder for icons/user menu */}
+
+
+          </div>
+        </header>
+
+        {/* Page content */}
+        <main className="flex-1 overflow-y-auto p-4">
+          {children}
+        </main>
+      </div>
+    </div>  
   );
 };
 

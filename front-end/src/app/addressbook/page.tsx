@@ -4,11 +4,8 @@ import AddressBookPage from './AddressBook';
 
 export default function Customers() {
   return (
-    <div className="flex h-screen">
-    <SidebarWithHeader />
-    <main className="flex-1 p-4">
+    <SidebarWithHeader>
       <AddressBookPage />
-    </main>
-  </div>
+    </SidebarWithHeader>
   );
 }
