@@ -1,12 +1,13 @@
 import React from 'react'
 import SidebarWithHeader from '../components/Sidebar'
 
-const page = () => {
+const dashboard = () => {
   return (
     <>
    
-    <SidebarWithHeader/> </>
+    <SidebarWithHeader/> 
+    </>
   )
 }
 
-export default page
+export default dashboard
